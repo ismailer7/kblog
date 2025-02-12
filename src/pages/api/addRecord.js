@@ -14,9 +14,10 @@ export default async function handler(req, res) {
       const timezone = clientInfo.timezone;
       const created = clientInfo.created
       const deleted = clientInfo.deleted;
+      const updated = created;
     
       // Insert data into the 'users' collection (you can choose any collection name)
-      const result = await db.collection('subscribers').insertOne({ email, ipAddress, userAgent, location, timezone, created, deleted });
+      const result = await db.collection('subscribers').insertOne({ email, ipAddress, userAgent, location, timezone, created, updated, deleted });
       // Respond with the inserted record
       res.status(200).json({ message: 'Record added successfully', record: email });
     } catch (error) {

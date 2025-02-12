@@ -17,7 +17,7 @@ export function Language() {
   }
 
   return (
-    <div className="group absolute top-4 right-0 transform -translate-x-1/2 -translate-y-1/2 z-50 m-2.5 p-2.5 mt-15px" style={{marginTop: 15 + 'px'}}>
+    <div className="group absolute top-4 right-0 transform -translate-x-1/2 -translate-y-1/2 z-50 m-2.5 p-2.5 mt-15px light" style={{marginTop: 15 + 'px'}}>
       <Dropdown>
       <DropdownButton >
       <ReactCountryFlag countryCode="US" svg/>
