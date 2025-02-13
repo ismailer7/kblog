@@ -15,12 +15,22 @@ export default async function handler(req, res) {
       const created = clientInfo.created
       const deleted = clientInfo.deleted;
       const updated = created;
-    
-      // Insert data into the 'users' collection (you can choose any collection name)
-      const result = await db.collection('subscribers').insertOne({ email, ipAddress, userAgent, location, timezone, created, updated, deleted });
-      // Respond with the inserted record
-      res.status(200).json({ message: 'Record added successfully', record: email });
+      const verified = false;
+      
+      const record = await db.collection('subscribers').findOne({ email });
+      if(record != null) {
+        res.status(500).json({ error: 'Record Already Exist!', details: error.message });
+        return;
+      } else {
+        // Insert data into the 'users' collection (you can choose any collection name)
+        const result = await db.collection('subscribers').insertOne({ email, ipAddress, userAgent, location, timezone, created, updated, deleted, verified });
+      
+        // Respond with the inserted record 
+        res.status(200).json({ message: 'Record added successfully', record: email });
+      }
+      
     } catch (error) {
+      //console.log('erororro' + error.message)
       res.status(500).json({ error: 'Failed to add record', details: error.message });
     }
   } else {

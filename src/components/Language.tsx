@@ -17,19 +17,19 @@ export function Language() {
   }
 
   return (
-    <div className="group absolute top-4 right-0 transform -translate-x-1/2 -translate-y-1/2 z-50 m-2.5 p-2.5" style={{marginTop: 15 + 'px', marginRight: 15 + 'px'}}>
+    /*<div className="group absolute top-4 right-0 transform -translate-x-1/2 -translate-y-1/2 z-50 m-2.5 p-2.5" style={{marginTop: 15 + 'px', marginLeft: 25 + 'px'}}>
       <Dropdown>
       <DropdownButton >
-      <ReactCountryFlag countryCode="US" svg/>
+      <ReactCountryFlag countryCode="US" svg/> English
       </DropdownButton>
       <DropdownMenu>
-        <DropdownItem href="#"><ReactCountryFlag countryCode="FR" svg/></DropdownItem>
-        <DropdownItem href="#"><ReactCountryFlag countryCode="ES" svg/></DropdownItem>
-        <DropdownItem href="#"><ReactCountryFlag countryCode="DE" svg/></DropdownItem>
+        <DropdownItem href="#"><ReactCountryFlag countryCode="FR" svg/> French</DropdownItem>
+        <DropdownItem href="#"><ReactCountryFlag countryCode="ES" svg/> Spanish</DropdownItem>
+        <DropdownItem href="#"><ReactCountryFlag countryCode="DE" svg/> Deutch</DropdownItem>
       </DropdownMenu>
     </Dropdown>
-    </div>
-  
+    </div>*/
+    <div></div>
 
   )
 }

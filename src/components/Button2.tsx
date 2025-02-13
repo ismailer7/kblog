@@ -18,11 +18,11 @@ const styles = {
   ],
   solid: [
     // Optical border, implemented as the button background to avoid corner artifacts
-    'border-transparent bg-grey',
+    'border-transparent bg-(--btn-border)',
     // Dark mode: border is rendered on `after` so background is set to button background
-    'dark:bg-dark',
+    'dark:bg-(--btn-bg)',
     // Button background, implemented as foreground layer to stack on top of pseudo-border layer
-    'before:absolute before:inset-0 before:-z-10 before:rounded-[calc(var(--radius-lg)-1px)] before:bg-white',
+    'before:absolute before:inset-0 before:-z-10 before:rounded-[calc(var(--radius-lg)-1px)] before:bg-(--btn-bg)',
     // Drop shadow, applied to the inset `before` layer so it blends with the border
     'before:shadow-sm',
     // Background color is moved to control and shadow is removed in dark mode so hide `before` pseudo
@@ -50,7 +50,7 @@ const styles = {
   ],
   plain: [
     // Base
-    'border-transparent text-zinc-950 data-active:bg-zinc data-hover:bg-zinc-950/5',
+    'border-transparent text-zinc-950 data-active:bg-zinc-950/5 data-hover:bg-zinc-950/5',
     // Dark mode
     'dark:text-white dark:data-active:bg-white/10 dark:data-hover:bg-white/10',
     // Icon

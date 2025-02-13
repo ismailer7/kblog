@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import { ThemeToggle } from './ThemeToggle';
 import Prompt from './Prompt';
+import { useTheme } from 'next-themes';
 
 export function SignUpForm() {
   let id = useId()
@@ -17,8 +18,11 @@ export function SignUpForm() {
     location: '',
     timezone: '',
     created: '',
-    deleted: false
+    deleted: false,
   });
+
+  let { resolvedTheme, setTheme } = useTheme()
+  let otherTheme = resolvedTheme === 'dark' ? 'light' : 'dark'
 
   useEffect(() => {
     // Get browser user-agent
@@ -53,7 +57,7 @@ export function SignUpForm() {
       location: 'N/A',
       timezone,
       created,
-      deleted
+      deleted,
     });
   }, []);
 
@@ -71,13 +75,20 @@ export function SignUpForm() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(clientInfo),
-      }),
+      })
+      .then((res) => {
+        if(!res.ok) {
+          throw new Error('Email Already Exist!')
+        }
+        return res.json();
+      })
+      ,
       {
         pending: 'Thanks for Subscribing..',
         success: 'Email Added to our List 👌',
-        error: 'Email Not Added 🤯'
+        error: 'Email Not Added 🤯, Record Already Exist!'
       },
-  {theme: 'light', position: 'top-left'});
+      {theme: otherTheme, position: 'top-left'});
 
   };
 
