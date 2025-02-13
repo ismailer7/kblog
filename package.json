@@ -41,7 +41,8 @@
     "shiki": "^0.14.7",
     "tailwindcss": "^4.0.0",
     "typescript": "^5.3.3",
-    "unist-util-visit": "^5.0.0"
+    "unist-util-visit": "^5.0.0",
+    "uuid": "^11.0.5"
   },
   "devDependencies": {
     "eslint": "^8.56.0",

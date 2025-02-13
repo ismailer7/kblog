@@ -1,4 +1,5 @@
 import { connectToDatabase } from '../../lib/mongodb';
+import { v4 as uuidv4 } from 'uuid';
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
@@ -8,6 +9,7 @@ export default async function handler(req, res) {
       // The data you want to insert
       let clientInfo = req.body;
       const email = clientInfo.emailAddress;
+      const uuid = uuidv4();
       const ipAddress = forwarded ? forwarded.split(',')[0] : req.connection.remoteAddress;
       const userAgent = clientInfo.userAgent;
       const location = clientInfo.location;
@@ -23,7 +25,7 @@ export default async function handler(req, res) {
         return;
       } else {
         // Insert data into the 'users' collection (you can choose any collection name)
-        const result = await db.collection('subscribers').insertOne({ email, ipAddress, userAgent, location, timezone, created, updated, deleted, verified });
+        const result = await db.collection('subscribers').insertOne({ email, uuid, ipAddress, userAgent, location, timezone, created, updated, deleted, verified });
       
         // Respond with the inserted record 
         res.status(200).json({ message: 'Record added successfully', record: email });
