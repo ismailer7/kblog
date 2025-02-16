@@ -28,7 +28,7 @@ export function Button({
 )) {
   className = clsx(
     className,
-    'group relative isolate flex-none rounded-md py-1.5 text-[0.8125rem]/6 font-semibold bg-sky-400 text-black',
+    'group relative isolate flex-none rounded-md py-1.5 text-[0.8125rem]/6 font-semibold bg-sky-400 text-black no-underline',
     arrow ? 'pl-2.5 pr-[calc(9/16*1rem)]' : 'px-2.5',
   )
 
