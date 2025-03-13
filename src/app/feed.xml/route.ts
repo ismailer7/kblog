@@ -17,8 +17,8 @@ export async function GET(req: Request) {
   }
 
   let feed = new Feed({
-    title: 'Commit',
-    description: 'Open-source Git client for macOS minimalists',
+    title: 'Cryptos 4',
+    description: 'Crypto blogging with Dynamic Articles.',
     author,
     id: siteUrl,
     link: siteUrl,

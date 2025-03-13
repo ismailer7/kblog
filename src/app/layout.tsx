@@ -21,9 +21,9 @@ const monaSans = localFont({
 })
 
 export const metadata: Metadata = {
-  title: 'Commit - Open-source Git client for macOS minimalists',
+  title: 'Kim Blog - Day to Day Blogging with interesting Crypto Events',
   description:
-    'Commit is a lightweight Git client you can open from anywhere any time you’re ready to commit your work with a single keyboard shortcut. It’s fast, beautiful, and completely unnecessary.',
+    'Welcome to My One Page Blog where each day I publish an interesting article related to Crypto Currencies and how you can Buy and Sell them from different platforms. Hope you are going to enjoy this and looking forward to send exciting articles.',
   alternates: {
     types: {
       'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,
