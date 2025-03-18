@@ -42,6 +42,7 @@ export default function RootLayout({
       className={clsx('h-full antialiased', inter.variable, monaSans.variable)}
       suppressHydrationWarning
     >
+      <meta name="google-adsense-account" content="ca-pub-3600776918536361"></meta>
       <body className="flex min-h-full flex-col bg-white dark:bg-gray-950">
         <Providers>{children}</Providers>
       </body>
